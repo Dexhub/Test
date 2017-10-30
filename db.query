@@ -1,0 +1,1 @@
+create table exchanges ( lastupdatedtimestmap timestamp, coinpair varchar(100), excahnge varchar(100), price float(8,3) );

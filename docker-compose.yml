@@ -1,0 +1,26 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+      - "9000:9000"
+    environment:
+      - MYSQL_HOST=mysql
+    volumes:
+      - ${HOME}/sellnews/POC:/poc # -- remove this in prduction
+    links:
+        - mysql
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: poc
+      MYSQL_USER: poc
+      MYSQL_USER_PASSWORD: poc
+    volumes:
+      - ${HOME}/sellnews/POC/mysql-datadir:/var/lib/mysql # -- remove this in prduction
