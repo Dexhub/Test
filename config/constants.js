@@ -21,7 +21,7 @@ module.exports = {
   */
   HTTP_STATUS: {
     OK: 200,
-
+    NOTOK: 400,
   },
 
   /*

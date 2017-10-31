@@ -8,6 +8,9 @@ const app = express();
 const constants = require('./config/constants');
 const pollExchange = require('./helpers/poller');
 
+pollExchange.updateExchange('bittrex');
+pollExchange.updateExchange('poloniex');
+
 app.use(bodyParser.json());
 
 app.use(cors());

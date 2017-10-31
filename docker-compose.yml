@@ -4,12 +4,13 @@ services:
     build: .
     ports:
       - "9000:9000"
+    network_mode: host
     environment:
       - MYSQL_HOST=mysql
     volumes:
       - ${HOME}/sellnews/POC:/poc # -- remove this in prduction
-    links:
-        - mysql
+    #links:
+    #    - mysql
 
   mysql:
     image: mysql:5.7
